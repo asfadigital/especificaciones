@@ -16,12 +16,12 @@ body{margin:0;background:var(--bg);color:var(--fg);font:15.5px/1.6 "Barlow","Seg
 .cond{font-family:"Barlow Condensed","Arial Narrow","Segoe UI",sans-serif}
 
 /* Barra de progreso: la vía y el tren */
-#via{position:fixed;top:0;left:0;right:0;height:12px;z-index:9;background:repeating-linear-gradient(90deg,#5b4632 0 3px,transparent 3px 11px),linear-gradient(#0000 2px,#9fb3c8 2px 3px,#0000 3px 7px,#9fb3c8 7px 8px,#0000 8px),var(--navy2)}
+#via{position:fixed;top:0;left:0;right:0;height:22px;z-index:9;pointer-events:none;background:repeating-linear-gradient(90deg,#5b4632 0 4px,transparent 4px 14px) 0 13px/100% 9px no-repeat,linear-gradient(#0000 14px,#9fb3c8 14px 15.5px,#0000 15.5px 19px,#9fb3c8 19px 20.5px,#0000 20.5px),var(--navy2)}
 #recorrido{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--verde),var(--amarillo));opacity:.55}
-#tren{position:absolute;top:-5px;left:0;width:64px;height:18px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.45));transform:translateX(-100%);transition:left .08s linear}
+#tren{position:absolute;top:-4px;left:0;width:96px;height:27px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.5));transform:translateX(-100%);transition:left .08s linear}
 
 /* Índice lateral: plano de línea */
-nav{position:fixed;top:12px;left:0;bottom:0;width:310px;overflow-y:auto;background:linear-gradient(180deg,var(--navy) 0,var(--navy2) 100%);color:#e4e7eb;padding:0 0 40px;scrollbar-width:thin;scrollbar-color:#2c4a75 transparent}
+nav{position:fixed;top:22px;left:0;bottom:0;width:310px;overflow-y:auto;background:linear-gradient(180deg,var(--navy) 0,var(--navy2) 100%);color:#e4e7eb;padding:0 0 40px;scrollbar-width:thin;scrollbar-color:#2c4a75 transparent}
 nav .marca{padding:22px 22px 18px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:10px}
 nav .marca b{display:block;font:700 22px/1 "Barlow Condensed","Arial Narrow",sans-serif;letter-spacing:.04em;color:#fff}
 nav .marca small{display:inline-block;margin-top:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#111;background:var(--amarillo);padding:2px 8px;border-radius:3px;font-weight:700}
@@ -38,7 +38,7 @@ nav a.activo{background:rgba(47,179,68,.14);color:#fff}
 nav a.activo::before{background:var(--verde);box-shadow:0 0 0 3px var(--navy),0 0 12px 3px rgba(47,179,68,.8)}
 nav a.t1.activo::before{border-color:var(--verde);background:#fff}
 
-main{margin-left:310px;padding:12px 0 80px}
+main{margin-left:310px;padding:22px 0 80px}
 .contenido{max-width:1120px;margin:0 auto;padding:0 44px;font-size:calc(15.5px*var(--esc,1))}
 
 /* Portada */
@@ -91,8 +91,8 @@ td p,th p{margin:2px 0;text-align:left;hyphens:manual}
 /* Botones */
 .boton{position:fixed;z-index:8;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:2px solid rgba(255,255,255,.2);background:var(--navy);color:#fff;font:600 18px/1 system-ui;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
 .boton:hover{border-color:var(--amarillo)}
-#tema{top:22px;right:18px}
-.tam{position:fixed;z-index:8;top:22px;right:70px;display:flex;align-items:center;height:42px;border-radius:21px;background:var(--navy);border:2px solid rgba(255,255,255,.2);box-shadow:0 4px 14px rgba(0,0,0,.25);overflow:hidden}
+#tema{top:32px;right:18px}
+.tam{position:fixed;z-index:8;top:32px;right:70px;display:flex;align-items:center;height:42px;border-radius:21px;background:var(--navy);border:2px solid rgba(255,255,255,.2);box-shadow:0 4px 14px rgba(0,0,0,.25);overflow:hidden}
 .tam button{height:100%;border:0;background:transparent;color:#fff;font:700 15px/1 "Barlow Condensed","Arial Narrow",sans-serif;padding:0 12px;cursor:pointer}
 .tam button:hover:not(:disabled){background:rgba(255,255,255,.12);color:var(--amarillo)}
 .tam button:disabled{opacity:.35;cursor:default}
@@ -101,7 +101,7 @@ td p,th p{margin:2px 0;text-align:left;hyphens:manual}
 #arriba{bottom:22px;right:18px;opacity:0;pointer-events:none;transition:opacity .2s}
 #arriba.ver{opacity:1;pointer-events:auto}
 #arriba svg{width:18px;height:18px}
-#menu{display:none;top:22px;left:14px}
+#menu{display:none;top:32px;left:14px}
 @media (max-width:980px){nav{transform:translateX(-100%);transition:transform .25s;z-index:7;width:290px}
 body.abierto nav{transform:none;box-shadow:0 0 0 100vmax rgba(0,0,0,.4)}main{margin-left:0}#menu{display:grid}
 .contenido{padding:0 16px}header.portada{padding:76px 16px 0;min-height:0}.portada h1{font-size:32px}
@@ -114,7 +114,7 @@ nav .abrebusca kbd,.busca kbd{margin-left:auto;font:600 11px system-ui;padding:2
 .boton svg{width:18px;height:18px}
 nav .abrebusca svg{width:16px;height:16px;flex:none}
 nav .abrebusca kbd{white-space:nowrap}
-#buscam{display:none;top:22px;left:66px}
+#buscam{display:none;top:32px;left:66px}
 .busca{position:fixed;inset:0;z-index:20;display:none;background:rgba(5,14,28,.55);backdrop-filter:blur(3px);padding:8vh 16px 16px}
 .busca.abierta{display:block}
 .busca .caja{max-width:760px;margin:0 auto;background:var(--papel);border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.4);overflow:hidden;border-top:5px solid var(--amarillo);display:flex;flex-direction:column;max-height:84vh}
